@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>/* CSS */</style>
+<body>
+<script src="d3.v2.js"></script>
+<script>
+    function update(array) {
+        var p = d3.select("body").selectAll("p")
+            .data(array)
+            .text(String);
+
+        p.enter().append("p")
+            .transition()
+            .duration(1000)
+            .text(String);
+
+        p.exit().remove();
+    }
+
+    update([4, 8, 15, 16, 23, 42]);
+    update([4, 8, 15, 16, 23, 37, 338]);
+</script>
+</body>
