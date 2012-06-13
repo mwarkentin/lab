@@ -50,5 +50,21 @@
             value: v = ~~Math.max(10, Math.min(90, v + 10 * (Math.random() - .5)))
         };
     }
+
+    function redraw() {
+        // Update...
+        chart.selectAll("rect")
+            .data(data)
+          .transition()
+            .duration(1000)
+            .attr("y", function(d) { return h - y(d.value) - .5 })
+            .attr("height", function(d) { return y(d.value) })
+    }
+
+    setInterval(function() {
+        data.shift();
+        data.push(next());
+        redraw();
+    }, 1500);
 </script>
 </body>
