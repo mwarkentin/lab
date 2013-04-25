@@ -12,5 +12,5 @@ echo "Installing jfifremove..."
 curl http://shrinkrayio.s3.amazonaws.com/worker-libs/jfifremove.c > bin/jfifremove.c
 gcc -o bin/jfifremove bin/jfifremove.c
 
-git clone https://github.com/mwarkentin/colourio.git
+git clone https://github.com/mwarkentin/lab.git
 imgopt .
