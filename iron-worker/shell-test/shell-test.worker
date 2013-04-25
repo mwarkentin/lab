@@ -1,0 +1,12 @@
+full_remote_build "true"
+runtime "python"
+exec "shell.py"
+
+file "test.sh"
+file "imgopt"
+
+pip "envoy"
+
+deb "advancecomp_1.16-1_amd64.deb"
+deb "optipng_0.6.4-1_amd64.deb"
+deb "libjpeg-progs_8b-1_amd64.deb"
