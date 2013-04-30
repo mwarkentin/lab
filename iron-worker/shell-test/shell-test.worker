@@ -2,10 +2,12 @@ full_remote_build "true"
 runtime "python"
 exec "shell.py"
 
+file "iron_utils.py"
 file "test.sh"
 file "imgopt"
 
 pip "envoy"
+pip "requests"
 
 deb "advancecomp_1.16-1_amd64.deb"
 deb "optipng_0.6.4-1_amd64.deb"
