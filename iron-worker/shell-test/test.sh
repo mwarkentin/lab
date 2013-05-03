@@ -25,7 +25,6 @@ CLONE_URL="https://$3:x-oauth-basic@github.com/$FULL_REPO.git"
 echo "Cloning $FULL_REPO ($CLONE_URL)"
 git clone "$CLONE_URL"
 
-cd "$2"
 echo "Running imgopt on full repo"
-imgopt .
+imgopt $2
 git status

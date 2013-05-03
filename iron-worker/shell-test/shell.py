@@ -23,7 +23,6 @@ def get_branch_name(repo):
     try:
         r = requests.post(url)
         count_json = r.json()
-        print "count_json={}".format(count_json)
         branch_name = branch_format.format(count_json['count'])
     except (requests.ConnectionError, KeyError):
         branch_name = branch_format.format(uuid4())
