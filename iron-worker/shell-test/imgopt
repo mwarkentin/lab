@@ -65,12 +65,12 @@ do_png () {
   # advpng, part of AdvanceCOMP, is available here:
   # http://advancemame.sourceforge.net/comp-download.html
   echo "Optimizing with advpng..."
-  advpng -z -4 -q "$1"
+  advpng -z -2 -q "$1"
 
   # OptiPNG is available here:
   # http://optipng.sourceforge.net/
   echo "Optimizing with optipng..."
-  optipng -q -zc1-9 -zm1-9 -zs0-3 -f0-5 "$1"
+  optipng -q "$1"
 
   # pngout is available here (binaries only):
   # http://www.jonof.id.au/index.php?p=kenutils
