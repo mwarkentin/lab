@@ -27,4 +27,11 @@ git clone "$CLONE_URL"
 
 echo "Running imgopt on full repo"
 imgopt $2
+
+cd $2
+git config --global user.name "shrinkray.io"
+git config --global user.email michael@shrinkray.io
+git checkout -b $4
 git status
+git commit -am 'Bleep bloop.. optimizing your images.'
+git push origin $4
