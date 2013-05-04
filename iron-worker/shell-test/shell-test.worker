@@ -6,8 +6,10 @@ file "iron_utils.py"
 file "test.sh"
 file "imgopt"
 
-pip "envoy"
-pip "requests"
+pip "envoy", "==0.0.2"
+pip "requests", "==1.2.0"
+pip "Jinja2", "==2.6"
+pip "PyGithub", "==1.14.2"
 
 deb "advancecomp_1.16-1_amd64.deb"
 deb "optipng_0.6.4-1_amd64.deb"
