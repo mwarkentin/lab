@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func main() {
-    var x string = "hello"
-    var y string = "hello"
-    fmt.Println(x == y)
+    x := 5
+    fmt.Println(x)
 }
