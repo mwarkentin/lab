@@ -3,6 +3,10 @@ package main
 import "fmt"
 
 func main() {
-    dogsName := "Zoey"
-    fmt.Println("My dog's name is", dogsName)
+    x := "Hello world"
+    fmt.Println(x)
+}
+
+func f() {
+    fmt.Println(x)
 }
