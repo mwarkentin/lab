@@ -4,6 +4,6 @@ import "fmt"
 
 func main() {
     var x string = "hello"
-    var y string = "world"
+    var y string = "hello"
     fmt.Println(x == y)
 }
