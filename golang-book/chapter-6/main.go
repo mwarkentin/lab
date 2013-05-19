@@ -15,6 +15,7 @@ func main() {
     elements["F"] = "Fluorine"
     elements["Ne"] = "Neon"
 
-    name, ok := elements["Un"]
-    fmt.Println(name, ok)
+    if name, ok := elements["Un"]; ok {
+        fmt.Println(name, ok)
+    }
 }
