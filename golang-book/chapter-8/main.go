@@ -14,6 +14,12 @@ func square(x *float64) {
     *x = *x * *x
 }
 
+func swap(xPtr, yPtr *int) {
+    tmp := *xPtr
+    *xPtr = *yPtr
+    *yPtr = tmp
+}
+
 func main() {
     xPtr := new(int)
     zero(xPtr)
@@ -24,4 +30,9 @@ func main() {
     x := 1.5
     square(&x)
     fmt.Println(x)
+
+    y := 1
+    z := 2
+    swap(&y, &z)
+    fmt.Println(y, z)
 }
