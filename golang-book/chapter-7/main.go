@@ -42,6 +42,15 @@ func max(args ...int) int {
     return max
 }
 
+func makeOddGenerator() func() uint {
+    i := uint(1)
+    return func() (ret uint) {
+        ret = i
+        i += 2
+        return
+    }
+}
+
 func main() {
     xs := []float64{98,93,77,82,83}
     fmt.Println(average(xs))
@@ -49,4 +58,11 @@ func main() {
     fmt.Println(add(1,2,3))
     fmt.Println(half(1))
     fmt.Println(max(1,5,23,8,15))
+
+    nextOdd := makeOddGenerator()
+    fmt.Println(nextOdd())
+    fmt.Println(nextOdd())
+    fmt.Println(nextOdd())
+    fmt.Println(nextOdd())
+    fmt.Println(nextOdd())
 }
