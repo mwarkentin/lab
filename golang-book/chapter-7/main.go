@@ -32,10 +32,21 @@ func half(num int) (int, bool) {
     return half, isEven
 }
 
+func max(args ...int) int {
+    max := 0
+    for _, v := range args {
+        if v > max {
+            max = v
+        }
+    }
+    return max
+}
+
 func main() {
     xs := []float64{98,93,77,82,83}
     fmt.Println(average(xs))
     fmt.Println(sum(xs))
     fmt.Println(add(1,2,3))
     fmt.Println(half(1))
+    fmt.Println(max(1,5,23,8,15))
 }
