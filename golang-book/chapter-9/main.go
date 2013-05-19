@@ -26,10 +26,26 @@ func (c *Circle) area() float64 {
     return math.Pi * c.r*c.r
 }
 
+type Person struct {
+    Name string
+}
+
+type Android struct {
+    Person
+    Model string
+}
+
+func (p *Person) Talk() {
+    fmt.Println("Bleep bloop.")
+}
+
 func main() {
     r := Rectangle{0, 0, 10, 10}
     c := Circle{0, 0, 5}
 
     fmt.Println(r.area())
     fmt.Println(c.area())
+
+    a := new(Android)
+    a.Talk()
 }
