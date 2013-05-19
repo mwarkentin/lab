@@ -51,6 +51,13 @@ func makeOddGenerator() func() uint {
     }
 }
 
+func fib(x uint) uint {
+    if x == 0 || x == 1 {
+        return x
+    }
+    return fib(x-1) + fib(x-2)
+}
+
 func main() {
     xs := []float64{98,93,77,82,83}
     fmt.Println(average(xs))
@@ -65,4 +72,6 @@ func main() {
     fmt.Println(nextOdd())
     fmt.Println(nextOdd())
     fmt.Println(nextOdd())
+
+    fmt.Println(fib(10))
 }
