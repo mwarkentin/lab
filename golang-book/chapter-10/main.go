@@ -13,8 +13,7 @@ func pinger(c chan string) {
 
 func printer(c chan string) {
     for {
-        msg := <- c
-        fmt.Println(msg)
+        fmt.Println(<- c)
         time.Sleep(time.Second * 1)
     }
 }
