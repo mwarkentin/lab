@@ -2,6 +2,10 @@ package main
 
 import ("fmt"; "math")
 
+type Shape interface {
+    area() float64
+}
+
 type Circle struct {
     x, y, r float64
 }
@@ -26,6 +30,14 @@ func (c *Circle) area() float64 {
     return math.Pi * c.r*c.r
 }
 
+func totalArea(shapes ...Shape) float64 {
+    var area float64
+    for _, s := range shapes {
+        area += s.area()
+    }
+    return area
+}
+
 type Person struct {
     Name string
 }
@@ -45,6 +57,7 @@ func main() {
 
     fmt.Println(r.area())
     fmt.Println(c.area())
+    fmt.Println(totalArea(&c, &r))
 
     a := new(Android)
     a.Talk()
