@@ -2,6 +2,8 @@ package main
 
 import (
     "fmt"
+    "io/ioutil"
+    "os"
     "strings"
 )
 
@@ -46,4 +48,20 @@ func main() {
 
     str := string([]byte{'t','e','s','t'})
     fmt.Println(str)
+
+    bs, err := ioutil.ReadFile("test.txt")
+    if err != nil {
+        return
+    }
+    text := string(bs)
+    fmt.Println(text)
+
+    file, err := os.Create("test2.txt")
+    if err != nil {
+        // handle the error here
+        fmt.Println("Error creating file:", err)
+        return
+    }
+    defer file.Close()
+    file.WriteString("test")
 }
