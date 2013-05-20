@@ -4,6 +4,7 @@ import ("fmt"; "math")
 
 type Shape interface {
     area() float64
+    perimiter() float64
 }
 
 type Circle struct {
@@ -26,8 +27,18 @@ func (r *Rectangle) area() float64 {
     return l * w
 }
 
+func (r *Rectangle) perimiter() float64 {
+    l := distance(r.x1, r.y1, r.x1, r.y2)
+    w := distance(r.x1, r.y1, r.x2, r.y1)
+    return l*2 + w*2
+}
+
 func (c *Circle) area() float64 {
     return math.Pi * c.r*c.r
+}
+
+func (c *Circle) perimiter() float64 {
+    return 2 * math.Pi * c.r
 }
 
 func totalArea(shapes ...Shape) float64 {
@@ -55,8 +66,8 @@ func main() {
     r := Rectangle{0, 0, 10, 10}
     c := Circle{0, 0, 5}
 
-    fmt.Println(r.area())
-    fmt.Println(c.area())
+    fmt.Println(r.area(), r.perimiter())
+    fmt.Println(c.area(), c.perimiter())
     fmt.Println(totalArea(&c, &r))
 
     a := new(Android)
