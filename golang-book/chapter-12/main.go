@@ -40,4 +40,10 @@ func main() {
         // "TEST"
         strings.ToUpper("test"),
     )
+
+    arr := []byte("test")
+    fmt.Println(arr)
+
+    str := string([]byte{'t','e','s','t'})
+    fmt.Println(str)
 }
